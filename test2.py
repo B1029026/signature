@@ -41,7 +41,6 @@ transform = transforms.Compose([
 
 # 檢查是否已經存在已儲存的模型
 if os.path.exists('signature_model.pth'):
-    # 如果模型文件存在，則載入模型參數
     train_dataset = ImageFolder(root='train', transform=transform)
     num_classes = len(train_dataset.classes)  # 獲取類別數
     num_classes = 11
@@ -50,8 +49,7 @@ if os.path.exists('signature_model.pth'):
     model.eval()
     print("已載入已儲存的模型")
 else:
-    # 如果模型文件不存在，則執行訓練過程
-    # 注意：您需要將數據集組織成多個子文件夾，每個子文件夾對應一個類別。
+
     train_dataset = ImageFolder(root='train', transform=transform)
     num_classes = len(train_dataset.classes)  # 獲取類別數
 
