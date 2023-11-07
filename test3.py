@@ -47,7 +47,7 @@ if os.path.exists('signature_model.pth'):
     # 如果模型文件存在，則載入模型參數
     train_dataset = ImageFolder(root='train', transform=transform)
     num_classes = len(train_dataset.classes)  # 獲取類別數
-    num_classes = 13
+    num_classes = 11
     model = SignatureCNN(num_classes)  # 創建一個新的模型實例
     model.load_state_dict(torch.load('signature_model.pth'))  # 載入模型參數
     model.eval()
